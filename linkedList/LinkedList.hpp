@@ -1,5 +1,5 @@
 /**
-*	@author Dravid Joseph
+*	@author John Gibbons- modified by Dravid Joseph
 *	@date 2/1/16
 *	@file LinkedList.hpp
 *	@brief Implementation file for templated LinkedList class
