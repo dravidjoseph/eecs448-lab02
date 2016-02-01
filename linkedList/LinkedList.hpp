@@ -38,9 +38,30 @@ bool LinkedList<T>::search(T value) const
 	Node<T>* temp = m_front;
 	bool isFound = false;
 
-	/** TODO 
-		Fix this method
-	*/
+	if(size() == 0){
+	
+	}
+	if(size() == 1){
+		if(temp->getValue() == value){
+			isFound = true;
+		}
+	}
+
+	else{
+		while(temp->getNext() != nullptr){
+			if(temp->getValue() == value){
+				isFound = true;
+			}
+			temp = temp->getNext();
+
+		}
+		if(temp->getValue() == value){
+			isFound = true;
+		}
+		
+	}
+
+
 
 	return(isFound);
 }
