@@ -1,6 +1,6 @@
 /**
-*	@author 
-*	@date 
+*	@author Dravid Joseph 
+*	@date 2/1/16
 *	@file LinkedList.hpp
 *	@brief Implementation file for templated LinkedList class
 */
@@ -121,9 +121,30 @@ bool LinkedList<T>::removeBack()
 	Node<T>* secondintoLast = nullptr;
 	bool isRemoved = false;
 
-	/** TODO 
-		Fix this method
-	*/
+	if(size() == 0){
+		
+	}
+	if(size() == 1){
+		delete m_front;
+		m_front->setNext(nullptr);
+		m_size--;
+		isRemoved = true;
+	}
+	else{
+		secondintoLast = m_front;
+		lastNode = m_front->getNext();
+
+		while(lastNode->getNext() != nullptr){
+			secondintoLast = secondintoLast->getNext();
+			lastNode = lastNode->getNext();
+		}
+		delete lastNode;
+		lastNode = nullptr;
+
+		secondintoLast->setNext(nullptr);
+		m_size--;
+		isRemoved = true;
+	}
 
 	return(isRemoved);
 }	
